@@ -4,10 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import lombok.Builder;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import org.example.app.entities.Ticket;
+
 
 import java.util.List;
 
@@ -29,7 +27,7 @@ public class User {
         this.ticketsBooked = ticketsBooked;
         this.userId = userId;
     }
-    //here we are creating a empty
+    //here we are creating a empty constructor function
     public User(){}
 
     public String getName() {
