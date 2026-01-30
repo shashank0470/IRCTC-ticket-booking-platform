@@ -1,7 +1,7 @@
 [
   {
     "train_id": "bacs",
-    "train_no": 12345,
+    "train_no": "12345",
     "seats": [
       [0,0,0,0,0,0],
       [0,0,0,0,0,0],
@@ -21,7 +21,7 @@
   },
   {
     "train_id": "rajd",
-    "train_no": 12346,
+    "train_no": "12346",
     "seats": [
       [0,0,0,0,0,0],
       [0,0,0,0,0,0],
@@ -37,6 +37,129 @@
       "Mumbai",
       "Pune",
       "Bangalore"
+    ]
+  },
+  {
+    "train_id": "charminar",
+    "train_no": "12759",
+    "seats": [
+      [0,0,0,0],
+      [0,0,0,0],
+      [0,0,0,0],
+      [0,0,0,0],
+      [0,0,0,0]
+    ],
+    "station_times": {
+      "Chennai": "06:15:00",
+      "Vijayawada": "12:30:00",
+      "Hyderabad": "18:00:00"
+    },
+    "stations": [
+      "Chennai",
+      "Vijayawada",
+      "Hyderabad"
+    ]
+  },
+  {
+    "train_id": "howrah_exp",
+    "train_no": "12839",
+    "seats": [
+      [0,0,0,0,0],
+      [0,0,0,0,0],
+      [0,0,0,0,0]
+    ],
+    "station_times": {
+      "Kolkata": "22:30:00",
+      "Bhubaneswar": "05:00:00",
+      "Visakhapatnam": "12:15:00",
+      "Chennai": "21:00:00"
+    },
+    "stations": [
+      "Kolkata",
+      "Bhubaneswar",
+      "Visakhapatnam",
+      "Chennai"
+    ]
+  },
+  {
+    "train_id": "shatabdi_del",
+    "train_no": "12001",
+    "seats": [
+      [0,0,0,0,0,0,0,0],
+      [0,0,0,0,0,0,0,0],
+      [0,0,0,0,0,0,0,0]
+    ],
+    "station_times": {
+      "Delhi": "06:00:00",
+      "Agra": "08:15:00",
+      "Jhansi": "10:30:00",
+      "Bhopal": "13:00:00"
+    },
+    "stations": [
+      "Delhi",
+      "Agra",
+      "Jhansi",
+      "Bhopal"
+    ]
+  },
+  {
+    "train_id": "hyb_blr",
+    "train_no": "22691",
+    "seats": [
+      [0,0,0,0],
+      [0,0,0,0],
+      [0,0,0,0],
+      [0,0,0,0]
+    ],
+    "station_times": {
+      "Hyderabad": "23:00:00",
+      "Bangalore": "08:30:00"
+    },
+    "stations": [
+      "Hyderabad",
+      "Bangalore"
+    ]
+  },
+  {
+    "train_id": "pune_nagpur",
+    "train_no": "12113",
+    "seats": [
+      [0,0,0,0,0],
+      [0,0,0,0,0],
+      [0,0,0,0,0],
+      [0,0,0,0,0]
+    ],
+    "station_times": {
+      "Pune": "07:20:00",
+      "Nashik": "10:00:00",
+      "Nagpur": "18:45:00"
+    },
+    "stations": [
+      "Pune",
+      "Nashik",
+      "Nagpur"
+    ]
+  },
+  {
+    "train_id": "mumbai_delhi",
+    "train_no": "12951",
+    "seats": [
+      [0,0,0,0,0,0],
+      [0,0,0,0,0,0],
+      [0,0,0,0,0,0],
+      [0,0,0,0,0,0]
+    ],
+    "station_times": {
+      "Mumbai": "16:00:00",
+      "Surat": "21:30:00",
+      "Vadodara": "23:15:00",
+      "Delhi": "10:30:00"
+    },
+    "stations": [
+      "Mumbai",
+      "Surat",
+      "Vadodara",
+      "Delhi"
     ]
   }
 ]

@@ -1,16 +1,12 @@
 package org.example.app.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
-
 import org.example.app.entities.Train;
 
-
-import java.sql.Date;
-
 @JsonIgnoreProperties(ignoreUnknown = true)
-@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
+@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class Ticket{
 
     private String ticketId;
@@ -25,19 +21,30 @@ public class Ticket{
 
     private Train train;
 
-    public Ticket(){}
+    private int seatRow;
+    private int seatColumn;
+
+    public Ticket(){};
 
     //constructor setting up the value
-    public Ticket(String ticketId, String userId, String source, String destination, String dateOfTravel, Train train){
+    public Ticket(String ticketId, String userId, String source, String destination, String dateOfTravel, Train train, int seatRow, int seatColumn){
         this.ticketId = ticketId;
         this.userId = userId;
         this.source = source;
         this.destination = destination;
         this.dateOfTravel = dateOfTravel;
         this.train = train;
+        this.seatRow = seatRow;
+        this.seatColumn = seatColumn;
     }
 
+    public int getSeatRow() { return seatRow; }
+    public void setSeatRow(int seatRow) { this.seatRow = seatRow; }
+    public int getSeatColumn() { return seatColumn; }
+    public void setSeatColumn(int seatColumn) { this.seatColumn = seatColumn; }
+
     public String getTicketInfo(){
+        //String formate is used to crate a formatted String
         return String.format("Ticket ID: %s belongs to User %s from %s to %s on %s", ticketId, userId, source, destination, dateOfTravel);
     }
 

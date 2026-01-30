@@ -1,19 +1,19 @@
 package org.example.app.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import org.example.app.entities.Ticket;
 
-
 import java.util.List;
 
-@JsonNaming (PropertyNamingStrategy.SnakeCaseStrategy.class)
+@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User {
 
     private String name;
+    @JsonIgnore
     private String password;
     private String hashedPassword;
     private List<Ticket> ticketsBooked;
@@ -27,8 +27,8 @@ public class User {
         this.ticketsBooked = ticketsBooked;
         this.userId = userId;
     }
-    //here we are creating a empty constructor function
-    public User(){}
+    //here we are creating a empty constructor because A default (empty) constructor lets us create an object first and initialize its values later, which is especially useful in data structures and frameworks.
+    public User(){};
 
     public String getName() {
         return name;
@@ -47,7 +47,10 @@ public class User {
     }
 
     public void printTickets(){
-        for (int i = 0; i<ticketsBooked.size(); i++){
+        if (ticketsBooked == null || ticketsBooked.isEmpty()) {
+            return;
+        }
+        for (int i = 0; i < ticketsBooked.size(); i++) {
             System.out.println(ticketsBooked.get(i).getTicketInfo());
         }
     }

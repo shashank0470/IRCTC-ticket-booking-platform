@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.OptionalInt;
@@ -62,6 +63,9 @@ public class TrainService {
     }
 
     public List<Train> searchTrains(String source, String destination) {
+        if (trainList == null) {
+            return Collections.emptyList();
+        }
         return trainList.stream()
                 .filter(train -> validTrain(train, source, destination))
                 .collect(Collectors.toList());
@@ -113,20 +117,21 @@ public class TrainService {
 
     private boolean validTrain(Train train, String source, String destination) {
         List<String> stationOrder = train.getStations();
+        if (stationOrder == null || stationOrder.isEmpty() || source == null || destination == null) {
+            return false;
+        }
 
-        // Case-insensitive search for source and destination
         int sourceIndex = -1;
         int destinationIndex = -1;
-
         for (int i = 0; i < stationOrder.size(); i++) {
-            if (stationOrder.get(i).equalsIgnoreCase(source)) {
+            String station = stationOrder.get(i);
+            if (station != null && station.equalsIgnoreCase(source)) {
                 sourceIndex = i;
             }
-            if (stationOrder.get(i).equalsIgnoreCase(destination)) {
+            if (station != null && station.equalsIgnoreCase(destination)) {
                 destinationIndex = i;
             }
         }
-
         return sourceIndex != -1 && destinationIndex != -1 && sourceIndex < destinationIndex;
     }
 }
